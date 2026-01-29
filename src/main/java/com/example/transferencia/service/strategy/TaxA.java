@@ -1,7 +1,11 @@
 package com.example.transferencia.service.strategy;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
+
 import java.math.BigDecimal;
 
+@Component
 public class TaxA  implements TaxStrategy{
 
     @Override

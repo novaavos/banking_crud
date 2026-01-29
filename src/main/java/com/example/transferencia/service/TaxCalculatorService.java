@@ -1,5 +1,6 @@
 package com.example.transferencia.service;
 
+import com.example.transferencia.exceptions.RegraNegocioException;
 import com.example.transferencia.service.strategy.TaxStrategy;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +25,7 @@ public class TaxCalculatorService {
                 .filter(strategy -> strategy.aplica(valor, dias))
                 .findFirst()
                 .map(strategy -> strategy.calcular(valor, dias))
-                .orElseThrow();
+                .orElseThrow(() ->
+                        new RegraNegocioException("No tax applied to the appointment made"));
     }
 }

@@ -4,12 +4,14 @@ import com.example.transferencia.domain.Agendamento;
 import com.example.transferencia.dto.AgendamentoRequestDTO;
 import com.example.transferencia.exceptions.RegraNegocioException;
 import com.example.transferencia.repository.AgendamentoRepository;
+import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Service
 public class AgendamentoService {
 
     private final AgendamentoRepository repository;
